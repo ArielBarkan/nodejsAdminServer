@@ -338,18 +338,18 @@ app.get("/api/roles", (req, res) => {
     },
   });
 });
+app.get("/", (req, res) => {
+  res.send("Successful response.");
+});
 
 //post route for home-settings
-app.post("/home-settings", jsonParser, (req, res) => {
+app.post("/api/home-settings", jsonParser, (req, res) => {
   const { guid } = req.body;
   res.status(200).end();
 });
 
-app.get("/", (req, res) => {
-  res.send("Successful response.");
-});
 //get route for home settings
-app.get("/home-settings", (req, res) => {
+app.get("/api/home-settings", (req, res) => {
   res.json({ guid: 2 });
 });
 app.listen(port, () => {
