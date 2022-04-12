@@ -9,6 +9,31 @@ app.use(cors());
 const usersBulk = [
   [
     {
+      guid: "45f39723-bb26-4b6c-bd6a-a909ac110005",
+      firstName: "Roman",
+      lastName: "Dorin",
+      mail: "rdorin@magicsoftware.com",
+      phone: null,
+      created_dt: "2022-04-12T08:53:07.000Z",
+      created_by: null,
+      status: "ACTIVE",
+      image: null,
+      role: 1,
+      permissions: [
+        {
+          guid: "dce79fe8-b864-4458-9339-9a7e21360462",
+          app_guid: "03de3266-cb84-47e9-86aa-6a9258e78eea",
+          type: 1,
+        },
+        {
+          guid: "edb985b2-203b-406e-9883-db7e70e9aea8",
+          app_guid: "da922360-721f-484e-b159-2dddf1bbad38",
+          type: 1,
+        },
+      ],
+      extra: null,
+    },
+    {
       guid: 65,
       firstName: "Sophie",
       lastName: "Colon",
@@ -23,13 +48,8 @@ const usersBulk = [
       permissions: [
         {
           guid: "100",
-          app_guid: "5",
+          app_guid: "03de3266-cb84-47e9-86aa-6a9258e78eea",
           type: 1,
-        },
-        {
-          guid: "1050",
-          app_guid: "6",
-          type: 0,
         },
       ],
       extra: "{}",
@@ -49,7 +69,7 @@ const usersBulk = [
       permissions: [
         {
           guid: "1050",
-          app_guid: "5",
+          app_guid: "03de3266-cb84-47e9-86aa-6a9258e78eea",
           type: 1,
         },
       ],
@@ -70,7 +90,7 @@ const usersBulk = [
       permissions: [
         {
           guid: "3242",
-          app_guid: "6",
+          app_guid: "03de3266-cb84-47e9-86aa-6a9258e78eea",
           type: 1,
         },
       ],
@@ -91,7 +111,7 @@ const usersBulk = [
       permissions: [
         {
           guid: "13050",
-          app_guid: "5",
+          app_guid: "03de3266-cb84-47e9-86aa-6a9258e78eea",
           type: 0,
         },
       ],
@@ -114,7 +134,7 @@ const usersBulk = [
       permissions: [
         {
           guid: "1150",
-          app_guid: "6",
+          app_guid: "03de3266-cb84-47e9-86aa-6a9258e78eea",
           type: 1,
         },
       ],
@@ -135,7 +155,7 @@ const usersBulk = [
       permissions: [
         {
           guid: "546",
-          app_guid: "5",
+          app_guid: "03de3266-cb84-47e9-86aa-6a9258e78eea",
           type: 1,
         },
       ],
@@ -156,7 +176,7 @@ const usersBulk = [
       permissions: [
         {
           guid: "8632",
-          app_guid: "6",
+          app_guid: "03de3266-cb84-47e9-86aa-6a9258e78eea",
           type: 1,
         },
       ],
@@ -177,7 +197,7 @@ const usersBulk = [
       permissions: [
         {
           guid: "5632",
-          app_guid: "6",
+          app_guid: "03de3266-cb84-47e9-86aa-6a9258e78eea",
           type: 0,
         },
       ],
@@ -200,7 +220,7 @@ const usersBulk = [
       permissions: [
         {
           guid: "8682",
-          app_guid: "6",
+          app_guid: "03de3266-cb84-47e9-86aa-6a9258e78eea",
           type: 0,
         },
       ],
@@ -221,7 +241,7 @@ const usersBulk = [
       permissions: [
         {
           guid: "86332",
-          app_guid: "6",
+          app_guid: "03de3266-cb84-47e9-86aa-6a9258e78eea",
           type: 0,
         },
       ],
@@ -242,7 +262,7 @@ const usersBulk = [
       permissions: [
         {
           guid: "8632",
-          app_guid: "6",
+          app_guid: "03de3266-cb84-47e9-86aa-6a9258e78eea",
           type: 1,
         },
       ],
@@ -263,7 +283,7 @@ const usersBulk = [
       permissions: [
         {
           guid: "86342",
-          app_guid: "6",
+          app_guid: "03de3266-cb84-47e9-86aa-6a9258e78eea",
           type: 1,
         },
       ],
@@ -301,12 +321,15 @@ app.get("/api/roles", (req, res) => {
         {
           guid: 1,
           name: "Admin",
-          permissions: [1, 2],
+          applications: [
+            "03de3266-cb84-47e9-86aa-6a9258e78eea",
+            "da922360-721f-484e-b159-2dddf1bbad38",
+          ],
         },
         {
           guid: 2,
           name: "User",
-          permissions: [3, 4],
+          applications: ["dca60cb0-554c-4b5c-b33b-972cf27cf129"],
         },
       ],
       permissions: [
@@ -335,6 +358,26 @@ app.get("/api/roles", (req, res) => {
           name: "General Apllication 2 (guid 6)",
         },
       ],
+      applications: [
+        {
+          guid: "03de3266-cb84-47e9-86aa-6a9258e78eea",
+          name: "Admin",
+          icon: "admin.png",
+          status: "ACTIVE",
+        },
+        {
+          guid: "da922360-721f-484e-b159-2dddf1bbad38",
+          name: "App 1",
+          icon: "app1.png",
+          status: "ACTIVE",
+        },
+        {
+          guid: "dca60cb0-554c-4b5c-b33b-972cf27cf129",
+          name: "App 2",
+          icon: "app2.png",
+          status: "ACTIVE",
+        },
+      ],
     },
   });
 });
@@ -350,7 +393,7 @@ app.post("/api/home-settings", jsonParser, (req, res) => {
 
 //get route for home settings
 app.get("/api/home-settings", (req, res) => {
-  res.json({ guid: 2 });
+  res.json({ guid: "dca60cb0-554c-4b5c-b33b-972cf27cf129" });
 });
 app.listen(port, () => {
   console.log(`Example app is listening on port .`);
