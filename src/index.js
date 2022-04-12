@@ -357,5 +357,6 @@ app.listen(port, () => {
   console.log(`http://localhost:${port}/api/users?page=1&per_page=4`);
   console.log(`http://localhost:${port}/api/users?page=2&per_page=4`);
   console.log(`http://localhost:${port}/api/users?page=3&per_page=4`);
+  console.log(`http://localhost:${port}/api/home-settings`);
   console.log(`http://localhost:${port}/api/roles`);
 });
