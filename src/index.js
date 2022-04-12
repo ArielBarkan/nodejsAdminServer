@@ -1,6 +1,7 @@
 const cors = require("cors");
 const express = require("express");
-
+var bodyParser = require("body-parser");
+var jsonParser = bodyParser.json();
 const app = express();
 
 const port = process.env.PORT || 8888;
@@ -337,10 +338,20 @@ app.get("/api/roles", (req, res) => {
     },
   });
 });
+
+//post route for home-settings
+app.post("/home-settings", jsonParser, (req, res) => {
+  const { guid } = req.body;
+  res.status(200).end();
+});
+
 app.get("/", (req, res) => {
   res.send("Successful response.");
 });
-
+//get route for home settings
+app.get("/home-settings", (req, res) => {
+  res.json({ guid: 2 });
+});
 app.listen(port, () => {
   console.log(`Example app is listening on port .`);
   console.log(`http://localhost:${port}/api/users?page=1&per_page=4`);
