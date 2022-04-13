@@ -18,7 +18,7 @@ const usersBulk = [
       created_by: null,
       status: "ACTIVE",
       image: null,
-      role: 1,
+      role: "1-1",
       permissions: [
         {
           guid: "dce79fe8-b864-4458-9339-9a7e21360462",
@@ -44,7 +44,7 @@ const usersBulk = [
       status: "ACTIVE",
       image:
         "https://pbs.twimg.com/profile_images/1480989717223071754/XD8xGocL_400x400.jpg",
-      role: 1,
+      role: "1-1",
       permissions: [
         {
           guid: "100",
@@ -65,7 +65,7 @@ const usersBulk = [
       status: "ACTIVE",
       image:
         "https://pbs.twimg.com/profile_images/993798212149489664/ZqYOh_qd_400x400.jpg",
-      role: 1,
+      role: "1-1",
       permissions: [
         {
           guid: "1050",
@@ -86,7 +86,7 @@ const usersBulk = [
       status: "ACTIVE",
       image:
         "https://pbs.twimg.com/profile_images/1412119450153799680/djtPQXnI_400x400.jpg",
-      role: 2,
+      role: "2-2",
       permissions: [
         {
           guid: "3242",
@@ -107,7 +107,7 @@ const usersBulk = [
       status: "ACTIVE",
       image:
         "https://pbs.twimg.com/profile_images/1494144849930510339/HXI4I6hg_400x400.jpg",
-      role: 1,
+      role: "1-1",
       permissions: [
         {
           guid: "13050",
@@ -130,7 +130,7 @@ const usersBulk = [
       status: "ACTIVE",
       image:
         "https://pbs.twimg.com/profile_images/993798212149489664/ZqYOh_qd_400x400.jpg",
-      role: 2,
+      role: "2-2",
       permissions: [
         {
           guid: "1150",
@@ -151,7 +151,7 @@ const usersBulk = [
       status: "ACTIVE",
       image:
         "https://pbs.twimg.com/profile_images/1480989717223071754/XD8xGocL_400x400.jpg",
-      role: 2,
+      role: "2-2",
       permissions: [
         {
           guid: "546",
@@ -172,7 +172,7 @@ const usersBulk = [
       status: "ACTIVE",
       image:
         "https://pbs.twimg.com/profile_images/1480989717223071754/XD8xGocL_400x400.jpg",
-      role: 2,
+      role: "2-2",
       permissions: [
         {
           guid: "8632",
@@ -193,7 +193,7 @@ const usersBulk = [
       status: "ACTIVE",
       image:
         "https://pbs.twimg.com/profile_images/1480989717223071754/XD8xGocL_400x400.jpg",
-      role: 1,
+      role: "1-1",
       permissions: [
         {
           guid: "5632",
@@ -216,7 +216,7 @@ const usersBulk = [
       status: "ACTIVE",
       image:
         "https://pbs.twimg.com/profile_images/1480989717223071754/XD8xGocL_400x400.jpg",
-      role: 2,
+      role: "2-2",
       permissions: [
         {
           guid: "8682",
@@ -237,7 +237,7 @@ const usersBulk = [
       status: "ACTIVE",
       image:
         "https://pbs.twimg.com/profile_images/1480989717223071754/XD8xGocL_400x400.jpg",
-      role: 5,
+      role: "2-2",
       permissions: [
         {
           guid: "86332",
@@ -258,7 +258,7 @@ const usersBulk = [
       status: "ACTIVE",
       image:
         "https://pbs.twimg.com/profile_images/1480989717223071754/XD8xGocL_400x400.jpg",
-      role: 2,
+      role: "2-2",
       permissions: [
         {
           guid: "8632",
@@ -279,7 +279,7 @@ const usersBulk = [
       status: "ACTIVE",
       image:
         "https://pbs.twimg.com/profile_images/1480989717223071754/XD8xGocL_400x400.jpg",
-      role: 2,
+      role: "2-2",
       permissions: [
         {
           guid: "86342",
@@ -319,7 +319,7 @@ app.get("/api/roles", (req, res) => {
     data: {
       roles: [
         {
-          guid: 1,
+          guid: "1-1",
           name: "Admin",
           applications: [
             "03de3266-cb84-47e9-86aa-6a9258e78eea",
@@ -327,34 +327,34 @@ app.get("/api/roles", (req, res) => {
           ],
         },
         {
-          guid: 2,
+          guid: "2-2",
           name: "User",
           applications: ["dca60cb0-554c-4b5c-b33b-972cf27cf129"],
         },
       ],
       permissions: [
         {
-          guid: 1,
+          guid: "22222-22222",
           name: "Admin Apllication 1 (guid 1)",
         },
         {
-          guid: 2,
+          guid: "333333-33333",
           name: "Admin Apllication 2 (guid 2)",
         },
         {
-          guid: 3,
+          guid: "444444-444444",
           name: "User Apllication 1 (guid 3)",
         },
         {
-          guid: 4,
+          guid: "555555-55555",
           name: "User Apllication 2 (guid 4)",
         },
         {
-          guid: 5,
+          guid: "6666666-666666",
           name: "General Apllication 1 (guid 5)",
         },
         {
-          guid: 6,
+          guid: "7777777-777777",
           name: "General Apllication 2 (guid 6)",
         },
       ],
